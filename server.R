@@ -8,7 +8,11 @@ shinyServer(
           #p0 <- 450
           #r <- 0.15
           if(is.numeric(input$p0)==T) {
-            p0 <- input$p0
+            if(input$p0 >= 0) {
+                  p0 <- input$p0
+            } else {
+                  p0 <- 0
+            }
           } else {
             p0 <- 0
           }
